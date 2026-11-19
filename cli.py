@@ -39,7 +39,7 @@ def build_parser() -> argparse.ArgumentParser:
         default="Asante Royal Gold",
         help="Preset HSB colour palette name.",
     )
-    parser.add_argument("--scale", type=float, default=48.0, help="Motif scale factor.")
+    parser.add_argument("--scale", type=float, default=75.0, help="Motif scale factor.")
     parser.add_argument("--rotation", type=float, default=0.0, help="Base rotation in degrees.")
     parser.add_argument("--shear-x", type=float, default=0.0, help="Horizontal shear.")
     parser.add_argument("--shear-y", type=float, default=0.0, help="Vertical shear.")

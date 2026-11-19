@@ -69,7 +69,7 @@ def main() -> None:
         disabled=(symmetry == "kente"),
     )
 
-    scale = st.sidebar.slider("Motif Scale", min_value=15.0, max_value=110.0, value=48.0, step=1.0)
+    scale = st.sidebar.slider("Motif Scale", min_value=20.0, max_value=180.0, value=78.0, step=2.0)
     rotation = st.sidebar.slider("Base Rotation (deg)", min_value=-180.0, max_value=180.0, value=0.0, step=1.0)
     shear_x = st.sidebar.slider("Shear X", min_value=-0.8, max_value=0.8, value=0.0, step=0.05)
     shear_y = st.sidebar.slider("Shear Y", min_value=-0.8, max_value=0.8, value=0.0, step=0.05)

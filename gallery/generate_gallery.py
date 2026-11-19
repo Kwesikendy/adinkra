@@ -18,16 +18,16 @@ from patterns.factory import generate_pattern
 
 
 GALLERY_SPECS = [
-    ("01_rosette_gye_nyame.svg", "rosette", "gye_nyame", "Asante Royal Gold", 52.0, 0.0, 0.0, 0.0, 8, 5, 101, False),
-    ("02_rosette_adinkrahene.svg", "rosette", "adinkrahene", "Indigo Adinkra", 46.0, 15.0, 0.0, 0.0, 10, 5, 102, False),
-    ("03_mirror_sankofa.svg", "mirror_grid", "sankofa", "Adinkra Earth Tiles", 50.0, 0.0, 0.0, 0.0, 8, 5, 103, True),
-    ("04_mirror_akoma.svg", "mirror_grid", "akoma", "Terracotta Earth", 48.0, 0.0, 0.15, 0.0, 8, 4, 104, False),
-    ("05_frieze_dwennimmen.svg", "frieze", "dwennimmen", "Forest & Gold", 44.0, 10.0, 0.0, 0.0, 8, 5, 105, False),
-    ("06_frieze_nyame_dua.svg", "frieze", "nyame_dua", "Indigo Adinkra", 42.0, 0.0, 0.1, 0.0, 8, 6, 106, False),
-    ("07_hex_mpuannum.svg", "hex_tiling", "mpuannum", "Asante Royal Gold", 44.0, 0.0, 0.0, 0.0, 8, 5, 107, False),
-    ("08_hex_funtunfunefu.svg", "hex_tiling", "funtunfunefu", "Terracotta Earth", 46.0, 20.0, 0.0, 0.0, 8, 5, 108, False),
-    ("09_square_gye_nyame.svg", "square_grid", "gye_nyame", "Adinkra Earth Tiles", 48.0, 0.0, 0.0, 0.0, 8, 5, 109, True),
-    ("10_kente_royal.svg", "kente", "gye_nyame", "Asante Royal Gold", 48.0, 0.0, 0.0, 0.0, 8, 6, 110, False),
+    ("01_rosette_gye_nyame.svg", "rosette", "gye_nyame", "Asante Royal Gold", 72.0, 0.0, 0.0, 0.0, 8, 5, 101, False),
+    ("02_rosette_adinkrahene.svg", "rosette", "adinkrahene", "Indigo Adinkra", 64.0, 15.0, 0.0, 0.0, 10, 5, 102, False),
+    ("03_mirror_sankofa.svg", "mirror_grid", "sankofa", "Adinkra Earth Tiles", 80.0, 0.0, 0.0, 0.0, 8, 5, 103, True),
+    ("04_mirror_akoma.svg", "mirror_grid", "akoma", "Terracotta Earth", 88.0, 0.0, 0.15, 0.0, 8, 4, 104, False),
+    ("05_frieze_dwennimmen.svg", "frieze", "dwennimmen", "Forest & Gold", 64.0, 10.0, 0.0, 0.0, 8, 5, 105, False),
+    ("06_frieze_nyame_dua.svg", "frieze", "nyame_dua", "Indigo Adinkra", 56.0, 0.0, 0.1, 0.0, 8, 6, 106, False),
+    ("07_hex_mpuannum.svg", "hex_tiling", "mpuannum", "Asante Royal Gold", 54.0, 0.0, 0.0, 0.0, 8, 5, 107, False),
+    ("08_hex_funtunfunefu.svg", "hex_tiling", "funtunfunefu", "Terracotta Earth", 56.0, 20.0, 0.0, 0.0, 8, 5, 108, False),
+    ("09_square_gye_nyame.svg", "square_grid", "gye_nyame", "Adinkra Earth Tiles", 74.0, 0.0, 0.0, 0.0, 8, 5, 109, True),
+    ("10_kente_royal.svg", "kente", "gye_nyame", "Asante Royal Gold", 75.0, 0.0, 0.0, 0.0, 8, 6, 110, False),
 ]
 
 

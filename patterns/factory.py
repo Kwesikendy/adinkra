@@ -30,7 +30,7 @@ def generate_pattern(
     palette: Palette | None = None,
     width: float = 800.0,
     height: float = 800.0,
-    scale: float = 48.0,
+    scale: float = 75.0,
     rotation: float = 0.0,
     shear_x: float = 0.0,
     shear_y: float = 0.0,
