@@ -24,6 +24,14 @@ from kente.kente import COLOUR_MEANINGS
 from patterns.factory import SYMMETRY_TYPES, generate_pattern
 from symbols.loader import list_symbols
 
+STYLES_PATH = Path(__file__).resolve().parent / "styles.css"
+
+
+def _load_css() -> None:
+    if STYLES_PATH.exists():
+        css = STYLES_PATH.read_text(encoding="utf-8")
+        st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
+
 
 def _hsb_picker(label: str, default_hsb: tuple[float, float, float], key_prefix: str) -> tuple[float, float, float]:
     """Render H, S, B sliders and display the converted RGB/HEX value."""
@@ -43,11 +51,26 @@ def main() -> None:
         page_title="Adinkra & Kente Pattern Generator | CSSD 315",
         layout="wide",
     )
+    _load_css()
 
-    st.title("Adinkra & Kente Pattern Generator")
-    st.caption(
-        "CSSD 315 Computer Graphics — All geometry placed using a custom 3x3 homogeneous "
-        "Matrix engine (no SVG transform attributes)."
+    # Clean geometric studio header (no pill badges, no em dashes, no gradient text)
+    st.markdown(
+        """
+        <div class="studio-header">
+          <div class="studio-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <div>
+            <h1 class="studio-title">Adinkra &amp; Kente Pattern Studio</h1>
+            <p class="studio-subtitle">CSSD 315 Computer Graphics - Pre-transformed vector geometry from our 3x3 Matrix engine</p>
+          </div>
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
 
     # ------------------------------------------------------------------
@@ -125,26 +148,57 @@ def main() -> None:
     )
     svg_str = scene_to_svg_string(scene)
 
-    col_preview, col_info = st.columns([2, 1])
+    col_preview, col_info = st.columns([2.1, 1.0], gap="large")
 
     with col_preview:
-        st.subheader("Live Preview")
-        # Responsive HTML wrapper around the pure-coordinate SVG
+        st.subheader("Drafting Canvas")
+        # Responsive HTML wrapper matching our matte neumorphic drafting well
         html_preview = f"""
-        <div style="display:flex; justify-content:center; align-items:center;
-                    border:1px solid #ddd; border-radius:8px; padding:12px; background:#f8f9fa;">
-            <div style="width:100%; max-width:650px;">
-                {svg_str.replace('<svg ', '<svg style="width:100%; height:auto; display:block;" ', 1)}
-            </div>
+        <style>
+          body {{
+            margin: 0;
+            padding: 8px;
+            background: #EEF2F6;
+            font-family: system-ui, sans-serif;
+          }}
+          .well {{
+            background: #EEF2F6;
+            border-radius: 22px;
+            padding: 16px;
+            border: 1px solid rgba(255,255,255,0.55);
+            box-shadow: inset -4px -4px 10px rgba(255,255,255,0.8), inset 4px 4px 10px rgba(163,177,198,0.45);
+          }}
+          .mat {{
+            max-width: 640px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            border: 2px solid #CBD5E1;
+            border-radius: 14px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.08);
+            animation: fadeUp 0.28s ease-out;
+          }}
+          @keyframes fadeUp {{
+            from {{ opacity: 0.45; transform: translateY(3px); }}
+            to {{ opacity: 1; transform: translateY(0); }}
+          }}
+          @media (prefers-reduced-motion: reduce) {{
+            .mat {{ animation: none; }}
+          }}
+        </style>
+        <div class="well">
+          <div class="mat">
+            {svg_str.replace('<svg ', '<svg style="width:100%; height:auto; display:block; border-radius:8px;" ', 1)}
+          </div>
         </div>
         """
-        components.html(html_preview, height=690, scrolling=False)
+        components.html(html_preview, height=705, scrolling=False)
 
     with col_info:
-        st.subheader("Export")
+        st.subheader("Print & Vector Export")
         base_name = f"{symmetry}_{symbol_id}_seed{seed}"
         st.download_button(
-            label="Download SVG",
+            label="Download SVG (Pre-transformed)",
             data=svg_str.encode("utf-8"),
             file_name=f"{base_name}.svg",
             mime="image/svg+xml",
@@ -153,32 +207,51 @@ def main() -> None:
 
         pdf_bytes = scene_to_pdf_bytes(scene)
         st.download_button(
-            label="Download Print-Ready A3 PDF (297 x 420 mm)",
+            label="Download A3 PDF (297 x 420 mm)",
             data=pdf_bytes,
             file_name=f"{base_name}_A3.pdf",
             mime="application/pdf",
             use_container_width=True,
         )
 
-        st.divider()
-        st.subheader("Active HSB -> HEX Palette")
+        st.markdown("<div style='height:12px;'></div>", unsafe_allow_html=True)
+        st.subheader("HSB Palette Swatches")
         swatches = [
             ("Background", palette.background_hsb, palette.background),
             ("Primary", palette.primary_hsb, palette.primary),
             ("Accent", palette.accent_hsb, palette.accent),
             ("Detail", palette.detail_hsb, palette.detail),
         ]
-        for label, hsb, hex_c in swatches:
-            st.markdown(
-                f"<div style='display:flex;align-items:center;gap:8px;margin-bottom:6px;'>"
-                f"<span style='display:inline-block;width:20px;height:20px;border-radius:4px;"
-                f"border:1px solid #999;background:{hex_c};'></span>"
-                f"<span><b>{label}</b>: HSB{hsb} &rarr; <code>{hex_c}</code></span></div>",
-                unsafe_allow_html=True,
-            )
+        swatch_html = "".join(
+            f"""
+            <div class="clay-swatch">
+              <div class="clay-chip" style="background:{hex_c};"></div>
+              <div>
+                <div class="clay-swatch-label">{label}</div>
+                <div class="clay-swatch-meta">HSB({int(hsb[0])}, {int(hsb[1])}%, {int(hsb[2])}%) -> {hex_c}</div>
+              </div>
+            </div>
+            """
+            for label, hsb, hex_c in swatches
+        )
+        st.markdown(swatch_html, unsafe_allow_html=True)
 
-        st.divider()
-        st.metric("Transformed Shapes", len(scene.shapes))
+        st.markdown(
+            f"""
+            <div class="neu-panel">
+              <div style="font-size:0.8rem; color:#4A5568; text-transform:uppercase; letter-spacing:0.04em;">
+                Computed Geometry
+              </div>
+              <div style="font-size:1.6rem; font-weight:700; color:#161B22; margin-top:4px;">
+                {len(scene.shapes):,} shapes
+              </div>
+              <div style="font-size:0.82rem; color:#4A5568; margin-top:2px;">
+                0 SVG transform attributes
+              </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
     if symmetry == "kente":
         with st.expander("Kente Colour Meanings (Verify Marked Entries)", expanded=True):
