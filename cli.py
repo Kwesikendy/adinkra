@@ -45,6 +45,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--shear-y", type=float, default=0.0, help="Vertical shear.")
     parser.add_argument("--folds", type=int, default=8, help="Number of folds for rosette.")
     parser.add_argument("--grid-count", type=int, default=5, help="Grid/strip count.")
+    parser.add_argument("--tile-colors", action="store_true", help="Use alternating coloured tile backgrounds on grids.")
     parser.add_argument("--seed", type=int, default=42, help="Random seed.")
     parser.add_argument("--out", type=Path, required=True, help="Output SVG path.")
     parser.add_argument("--pdf", type=Path, default=None, help="Optional A3 PDF output path.")
@@ -66,6 +67,7 @@ def main(argv: list[str] | None = None) -> int:
         seed=args.seed,
         folds=args.folds,
         grid_count=args.grid_count,
+        tile_colors=args.tile_colors,
     )
     svg_path = write_svg(scene, args.out)
     print(f"Wrote SVG: {svg_path}")

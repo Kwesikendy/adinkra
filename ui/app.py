@@ -76,10 +76,13 @@ def main() -> None:
 
     folds = 8
     grid_count = 5
+    tile_colors = False
     if symmetry == "rosette":
         folds = st.sidebar.slider("Rosette Folds (N)", min_value=3, max_value=16, value=8, step=1)
     elif symmetry != "hex_tiling":
         grid_count = st.sidebar.slider("Grid / Strip Count", min_value=2, max_value=9, value=5, step=1)
+        if symmetry in ("mirror_grid", "square_grid"):
+            tile_colors = st.sidebar.checkbox("Alternating Coloured Tiles", value=True)
 
     seed = int(st.sidebar.number_input("Random Seed", min_value=0, max_value=999999, value=42, step=1))
 
@@ -118,6 +121,7 @@ def main() -> None:
         seed=seed,
         folds=folds,
         grid_count=grid_count,
+        tile_colors=tile_colors,
     )
     svg_str = scene_to_svg_string(scene)
 

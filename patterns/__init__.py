@@ -31,6 +31,40 @@ class PatternScene:
     metadata: dict[str, str] = field(default_factory=dict)
 
 
+_UNIT_TILE: tuple[Point2D, ...] = ((0.0, 0.0), (1.0, 0.0), (1.0, 1.0), (0.0, 1.0))
+
+
+def add_coloured_tiles(
+    scene: PatternScene,
+    cols: int,
+    rows: int,
+    cell_w: float,
+    cell_h: float,
+    palette: Palette,
+    seed: int = 42,
+) -> None:
+    """Fill each grid cell with alternating coloured tiles placed via `Matrix`."""
+    import random
+
+    rng = random.Random(seed)
+    tile_colors = [palette.background, palette.accent, palette.detail]
+    shift = rng.randint(0, len(tile_colors) - 1)
+    for r in range(rows):
+        for c in range(cols):
+            # (c + 2*r + shift) % 3 ensures no two orthogonally adjacent tiles share a colour
+            col = tile_colors[(c + 2 * r + shift) % len(tile_colors)]
+            m_tile = Matrix.translate(c * cell_w, r * cell_h) @ Matrix.scale(cell_w, cell_h)
+            scene.shapes.append(
+                RenderedShape(
+                    points=tuple(m_tile.apply_many(_UNIT_TILE)),
+                    closed=True,
+                    fill_color=col,
+                    stroke_color=None,
+                    stroke_width=0.0,
+                )
+            )
+
+
 def place_symbol(
     symbol: Symbol,
     transform: Matrix,

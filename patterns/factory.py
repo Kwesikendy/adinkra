@@ -37,6 +37,7 @@ def generate_pattern(
     seed: int = 42,
     folds: int = 8,
     grid_count: int = 5,
+    tile_colors: bool = False,
 ) -> PatternScene:
     """Generate a `PatternScene` for any supported symmetry type or Kente."""
     pal = palette or PRESET_PALETTES["Asante Royal Gold"]
@@ -78,6 +79,7 @@ def generate_pattern(
             shear_x=shear_x,
             shear_y=shear_y,
             seed=seed,
+            tile_colors=tile_colors,
         )
     if symmetry == "frieze":
         return generate_frieze(
@@ -118,6 +120,7 @@ def generate_pattern(
             shear_x=shear_x,
             shear_y=shear_y,
             seed=seed,
+            tile_colors=tile_colors,
         )
 
     raise ValueError(f"Unknown symmetry '{symmetry}'. Choose from: {', '.join(SYMMETRY_TYPES)}")

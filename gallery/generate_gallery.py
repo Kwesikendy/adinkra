@@ -18,16 +18,16 @@ from patterns.factory import generate_pattern
 
 
 GALLERY_SPECS = [
-    ("01_rosette_gye_nyame.svg", "rosette", "gye_nyame", "Asante Royal Gold", 52.0, 0.0, 0.0, 0.0, 8, 5, 101),
-    ("02_rosette_adinkrahene.svg", "rosette", "adinkrahene", "Indigo Adinkra", 46.0, 15.0, 0.0, 0.0, 10, 5, 102),
-    ("03_mirror_sankofa.svg", "mirror_grid", "sankofa", "Kuntunkuni Mourning", 50.0, 12.0, 0.0, 0.0, 8, 5, 103),
-    ("04_mirror_akoma.svg", "mirror_grid", "akoma", "Terracotta Earth", 48.0, 0.0, 0.15, 0.0, 8, 4, 104),
-    ("05_frieze_dwennimmen.svg", "frieze", "dwennimmen", "Forest & Gold", 44.0, 10.0, 0.0, 0.0, 8, 5, 105),
-    ("06_frieze_nyame_dua.svg", "frieze", "nyame_dua", "Indigo Adinkra", 42.0, 0.0, 0.1, 0.0, 8, 6, 106),
-    ("07_hex_mpuannum.svg", "hex_tiling", "mpuannum", "Asante Royal Gold", 44.0, 0.0, 0.0, 0.0, 8, 5, 107),
-    ("08_hex_funtunfunefu.svg", "hex_tiling", "funtunfunefu", "Terracotta Earth", 46.0, 20.0, 0.0, 0.0, 8, 5, 108),
-    ("09_square_gye_nyame.svg", "square_grid", "gye_nyame", "Kuntunkuni Mourning", 48.0, 15.0, 0.0, 0.0, 8, 5, 109),
-    ("10_kente_royal.svg", "kente", "gye_nyame", "Asante Royal Gold", 48.0, 0.0, 0.0, 0.0, 8, 6, 110),
+    ("01_rosette_gye_nyame.svg", "rosette", "gye_nyame", "Asante Royal Gold", 52.0, 0.0, 0.0, 0.0, 8, 5, 101, False),
+    ("02_rosette_adinkrahene.svg", "rosette", "adinkrahene", "Indigo Adinkra", 46.0, 15.0, 0.0, 0.0, 10, 5, 102, False),
+    ("03_mirror_sankofa.svg", "mirror_grid", "sankofa", "Adinkra Earth Tiles", 50.0, 0.0, 0.0, 0.0, 8, 5, 103, True),
+    ("04_mirror_akoma.svg", "mirror_grid", "akoma", "Terracotta Earth", 48.0, 0.0, 0.15, 0.0, 8, 4, 104, False),
+    ("05_frieze_dwennimmen.svg", "frieze", "dwennimmen", "Forest & Gold", 44.0, 10.0, 0.0, 0.0, 8, 5, 105, False),
+    ("06_frieze_nyame_dua.svg", "frieze", "nyame_dua", "Indigo Adinkra", 42.0, 0.0, 0.1, 0.0, 8, 6, 106, False),
+    ("07_hex_mpuannum.svg", "hex_tiling", "mpuannum", "Asante Royal Gold", 44.0, 0.0, 0.0, 0.0, 8, 5, 107, False),
+    ("08_hex_funtunfunefu.svg", "hex_tiling", "funtunfunefu", "Terracotta Earth", 46.0, 20.0, 0.0, 0.0, 8, 5, 108, False),
+    ("09_square_gye_nyame.svg", "square_grid", "gye_nyame", "Adinkra Earth Tiles", 48.0, 0.0, 0.0, 0.0, 8, 5, 109, True),
+    ("10_kente_royal.svg", "kente", "gye_nyame", "Asante Royal Gold", 48.0, 0.0, 0.0, 0.0, 8, 6, 110, False),
 ]
 
 
@@ -125,7 +125,7 @@ def generate_shirt_mockup(output_path: Path) -> Path:
 
 def main() -> None:
     gallery_dir = Path(__file__).resolve().parent
-    for fname, sym_type, sym_id, pal_name, scale, rot, shx, shy, folds, grid_c, seed in GALLERY_SPECS:
+    for fname, sym_type, sym_id, pal_name, scale, rot, shx, shy, folds, grid_c, seed, tiles in GALLERY_SPECS:
         scene = generate_pattern(
             symmetry=sym_type,
             symbol_id=sym_id,
@@ -137,6 +137,7 @@ def main() -> None:
             folds=folds,
             grid_count=grid_c,
             seed=seed,
+            tile_colors=tiles,
         )
         out = write_svg(scene, gallery_dir / fname)
         assert "transform=" not in out.read_text(encoding="utf-8")

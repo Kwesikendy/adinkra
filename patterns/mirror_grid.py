@@ -25,7 +25,7 @@ import random
 
 from engine.color import Palette
 from engine.matrix import Matrix
-from patterns import PatternScene, place_symbol
+from patterns import PatternScene, add_coloured_tiles, place_symbol
 from symbols.loader import Symbol
 
 
@@ -41,6 +41,7 @@ def generate_mirror_grid(
     shear_x: float = 0.0,
     shear_y: float = 0.0,
     seed: int = 42,
+    tile_colors: bool = False,
 ) -> PatternScene:
     """Generate a mirror-symmetric grid (pmm-style alternating X/Y reflections)."""
     rng = random.Random(seed)
@@ -53,6 +54,9 @@ def generate_mirror_grid(
         background=palette.background,
         metadata={"symmetry": "mirror_grid", "symbol": symbol.id, "seed": str(seed)},
     )
+
+    if tile_colors:
+        add_coloured_tiles(scene, cols, rows, cell_w, cell_h, palette, seed=seed)
 
     # Seeded slight local rotation jitter shared across all cells so symmetry is preserved
     jitter = rng.uniform(-10.0, 10.0)

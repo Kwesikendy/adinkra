@@ -6,41 +6,44 @@
       "role": "primary",
       "closed": false,
       "fill": false,
-      "stroke_width": 0.11,
+      "stroke_width": 0.14,
       "segments": [
-        {"type": "M", "to": [0.0, -0.82]},
-        {"type": "L", "to": [0.0, 0.82]}
+        {"type": "M", "to": [0.0, -0.42]},
+        {"type": "L", "to": [0.0, 0.64]}
       ]
     },
     {
       "role": "primary",
       "closed": false,
       "fill": false,
-      "stroke_width": 0.10,
+      "stroke_width": 0.14,
       "segments": [
-        {"type": "M", "to": [-0.58, -0.78]},
-        {"type": "C", "ctrl1": [-0.58, -0.35], "ctrl2": [-0.28, -0.15], "to": [0.0, -0.15]},
-        {"type": "C", "ctrl1": [0.28, -0.15], "ctrl2": [0.58, -0.35], "to": [0.58, -0.78]}
+        {"type": "M", "to": [0.0, -0.34]},
+        {"type": "C", "ctrl1": [-0.04, -0.78], "ctrl2": [-0.76, -0.78], "to": [-0.74, -0.18]},
+        {"type": "C", "ctrl1": [-0.72, 0.10], "ctrl2": [-0.30, 0.12], "to": [-0.28, -0.16]},
+        {"type": "C", "ctrl1": [-0.26, -0.32], "ctrl2": [-0.46, -0.32], "to": [-0.46, -0.16]}
       ]
     },
     {
-      "role": "accent",
+      "role": "primary",
       "closed": false,
       "fill": false,
-      "stroke_width": 0.09,
+      "stroke_width": 0.14,
       "segments": [
-        {"type": "M", "to": [-0.46, 0.25]},
-        {"type": "L", "to": [0.46, 0.25]}
+        {"type": "M", "to": [0.0, -0.34]},
+        {"type": "C", "ctrl1": [0.04, -0.78], "ctrl2": [0.76, -0.78], "to": [0.74, -0.18]},
+        {"type": "C", "ctrl1": [0.72, 0.10], "ctrl2": [0.30, 0.12], "to": [0.28, -0.16]},
+        {"type": "C", "ctrl1": [0.26, -0.32], "ctrl2": [0.46, -0.32], "to": [0.46, -0.16]}
       ]
     },
     {
-      "role": "accent",
+      "role": "primary",
       "closed": false,
       "fill": false,
-      "stroke_width": 0.09,
+      "stroke_width": 0.14,
       "segments": [
-        {"type": "M", "to": [-0.36, 0.62]},
-        {"type": "L", "to": [0.36, 0.62]}
+        {"type": "M", "to": [-0.52, 0.56]},
+        {"type": "C", "ctrl1": [-0.52, 0.66], "ctrl2": [0.52, 0.66], "to": [0.52, 0.56]}
       ]
     }
   ]

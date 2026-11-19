@@ -125,4 +125,11 @@ PRESET_PALETTES: dict[str, Palette] = {
         accent_hsb=(38.0, 82.0, 80.0),
         detail_hsb=(24.0, 55.0, 22.0),
     ),
+    "Adinkra Earth Tiles": Palette(
+        name="Adinkra Earth Tiles",
+        background_hsb=(38.0, 80.0, 92.0),
+        primary_hsb=(30.0, 12.0, 8.0),
+        accent_hsb=(16.0, 86.0, 82.0),
+        detail_hsb=(176.0, 78.0, 52.0),
+    ),
 }

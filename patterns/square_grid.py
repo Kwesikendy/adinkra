@@ -23,7 +23,7 @@ import random
 
 from engine.color import Palette
 from engine.matrix import Matrix
-from patterns import PatternScene, place_symbol
+from patterns import PatternScene, add_coloured_tiles, place_symbol
 from symbols.loader import Symbol
 
 
@@ -38,6 +38,7 @@ def generate_square_grid(
     shear_x: float = 0.0,
     shear_y: float = 0.0,
     seed: int = 42,
+    tile_colors: bool = False,
 ) -> PatternScene:
     """Generate a 4-fold rotational square grid (p4 wallpaper symmetry)."""
     rng = random.Random(seed)
@@ -53,6 +54,9 @@ def generate_square_grid(
         background=palette.background,
         metadata={"symmetry": "square_grid", "symbol": symbol.id, "seed": str(seed)},
     )
+
+    if tile_colors:
+        add_coloured_tiles(scene, cols, rows, cell_w, cell_h, palette, seed=seed)
 
     quad_scale = motif_scale * 0.65
     offset = min(cell_w, cell_h) * 0.22

@@ -37,3 +37,13 @@ def test_symmetry_generators_produce_valid_transform_free_svg(generator) -> None
     assert "transform=" not in svg
     assert "<svg" in svg
     assert "<polygon" in svg or "<polyline" in svg
+
+
+def test_alternating_coloured_tiles_on_grids() -> None:
+    sym = load_symbol("sankofa")
+    pal = PRESET_PALETTES["Adinkra Earth Tiles"]
+    plain = generate_mirror_grid(sym, pal, cols=4, rows=4, tile_colors=False)
+    tiled = generate_mirror_grid(sym, pal, cols=4, rows=4, tile_colors=True)
+    assert len(tiled.shapes) == len(plain.shapes) + 16
+    sq_tiled = generate_square_grid(sym, pal, cells=3, tile_colors=True)
+    assert len(sq_tiled.shapes) > 9
