@@ -239,13 +239,13 @@ def main() -> None:
         st.markdown(
             f"""
             <div class="neu-panel">
-              <div style="font-size:0.8rem; color:#4A5568; text-transform:uppercase; letter-spacing:0.04em;">
+              <div style="font-size:0.8rem; color:var(--neu-muted); text-transform:uppercase; letter-spacing:0.04em;">
                 Computed Geometry
               </div>
-              <div style="font-size:1.6rem; font-weight:700; color:#161B22; margin-top:4px;">
+              <div style="font-size:1.6rem; font-weight:700; color:var(--neu-ink); margin-top:4px;">
                 {len(scene.shapes):,} shapes
               </div>
-              <div style="font-size:0.82rem; color:#4A5568; margin-top:2px;">
+              <div style="font-size:0.82rem; color:var(--neu-muted); margin-top:2px;">
                 0 SVG transform attributes
               </div>
             </div>

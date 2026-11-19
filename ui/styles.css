@@ -228,3 +228,42 @@ code, pre, .mono-readout {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Clean Dark Mode fallback (no muddy white neumorphic shadows on dark) */
+[data-theme="dark"] .stApp,
+[data-theme="dark"] [data-testid="stAppViewContainer"] {
+  --neu-bg: #141820;
+  --neu-surface: #1A202C;
+  --neu-ink: #F1F5F9;
+  --neu-muted: #94A3B8;
+  --neu-edge: #2D3748;
+  --neu-raised: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --neu-inset: inset 0 2px 8px rgba(0, 0, 0, 0.55);
+  --clay-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 12px rgba(0, 0, 0, 0.40);
+  background: #141820 !important;
+  color: #F1F5F9 !important;
+}
+
+[data-theme="dark"] [data-testid="stSidebar"] {
+  background: #11151C !important;
+  border-right: 1px solid #2D3748;
+}
+
+[data-theme="dark"] .clay-swatch {
+  background: #1E2430;
+  border-color: #334155;
+}
+
+[data-theme="dark"] [data-baseweb="select"] > div,
+[data-theme="dark"] [data-baseweb="input"] > div {
+  background-color: #1E2430 !important;
+  border-color: #475569 !important;
+  color: #F1F5F9 !important;
+}
+
+[data-theme="dark"] .stDownloadButton > button {
+  background: #F1F5F9 !important;
+  color: #141820 !important;
+  border-color: #F1F5F9 !important;
+}
+
