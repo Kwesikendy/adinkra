@@ -1,0 +1,96 @@
+{
+  "id": "gye_nyame",
+  "name": "Gye Nyame",
+  "paths": [
+    {
+      "role": "primary",
+      "closed": true,
+      "fill": true,
+      "stroke_width": 0.04,
+      "segments": [
+        {"type": "M", "to": [0.0, -0.35]},
+        {"type": "C", "ctrl1": [0.30, -0.35], "ctrl2": [0.42, -0.15], "to": [0.36, 0.0]},
+        {"type": "C", "ctrl1": [0.42, 0.15], "ctrl2": [0.30, 0.35], "to": [0.0, 0.35]},
+        {"type": "C", "ctrl1": [-0.30, 0.35], "ctrl2": [-0.42, 0.15], "to": [-0.36, 0.0]},
+        {"type": "C", "ctrl1": [-0.42, -0.15], "ctrl2": [-0.30, -0.35], "to": [0.0, -0.35]}
+      ]
+    },
+    {
+      "role": "cutout",
+      "closed": true,
+      "fill": true,
+      "stroke_width": 0.02,
+      "segments": [
+        {"type": "M", "to": [0.0, -0.16]},
+        {"type": "C", "ctrl1": [0.14, -0.16], "ctrl2": [0.16, -0.06], "to": [0.16, 0.0]},
+        {"type": "C", "ctrl1": [0.16, 0.06], "ctrl2": [0.14, 0.16], "to": [0.0, 0.16]},
+        {"type": "C", "ctrl1": [-0.14, 0.16], "ctrl2": [-0.16, 0.06], "to": [-0.16, 0.0]},
+        {"type": "C", "ctrl1": [-0.16, -0.06], "ctrl2": [-0.14, -0.16], "to": [0.0, -0.16]}
+      ]
+    },
+    {
+      "role": "primary",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.11,
+      "segments": [
+        {"type": "M", "to": [0.0, -0.34]},
+        {"type": "C", "ctrl1": [0.0, -0.68], "ctrl2": [-0.52, -0.88], "to": [-0.72, -0.64]},
+        {"type": "C", "ctrl1": [-0.88, -0.45], "ctrl2": [-0.66, -0.22], "to": [-0.48, -0.38]}
+      ]
+    },
+    {
+      "role": "primary",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.11,
+      "segments": [
+        {"type": "M", "to": [0.0, -0.34]},
+        {"type": "C", "ctrl1": [0.0, -0.68], "ctrl2": [0.52, -0.88], "to": [0.72, -0.64]},
+        {"type": "C", "ctrl1": [0.88, -0.45], "ctrl2": [0.66, -0.22], "to": [0.48, -0.38]}
+      ]
+    },
+    {
+      "role": "primary",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.11,
+      "segments": [
+        {"type": "M", "to": [0.0, 0.34]},
+        {"type": "C", "ctrl1": [0.0, 0.68], "ctrl2": [-0.52, 0.88], "to": [-0.72, 0.64]},
+        {"type": "C", "ctrl1": [-0.88, 0.45], "ctrl2": [-0.66, 0.22], "to": [-0.48, 0.38]}
+      ]
+    },
+    {
+      "role": "primary",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.11,
+      "segments": [
+        {"type": "M", "to": [0.0, 0.34]},
+        {"type": "C", "ctrl1": [0.0, 0.68], "ctrl2": [0.52, 0.88], "to": [0.72, 0.64]},
+        {"type": "C", "ctrl1": [0.88, 0.45], "ctrl2": [0.66, 0.22], "to": [0.48, 0.38]}
+      ]
+    },
+    {
+      "role": "accent",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.08,
+      "segments": [
+        {"type": "M", "to": [-0.36, 0.0]},
+        {"type": "L", "to": [-0.66, 0.0]}
+      ]
+    },
+    {
+      "role": "accent",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.08,
+      "segments": [
+        {"type": "M", "to": [0.36, 0.0]},
+        {"type": "L", "to": [0.66, 0.0]}
+      ]
+    }
+  ]
+}
