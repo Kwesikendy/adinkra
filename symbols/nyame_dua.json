@@ -1,0 +1,47 @@
+{
+  "id": "nyame_dua",
+  "name": "Nyame Dua",
+  "paths": [
+    {
+      "role": "primary",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.11,
+      "segments": [
+        {"type": "M", "to": [0.0, -0.82]},
+        {"type": "L", "to": [0.0, 0.82]}
+      ]
+    },
+    {
+      "role": "primary",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.10,
+      "segments": [
+        {"type": "M", "to": [-0.58, -0.78]},
+        {"type": "C", "ctrl1": [-0.58, -0.35], "ctrl2": [-0.28, -0.15], "to": [0.0, -0.15]},
+        {"type": "C", "ctrl1": [0.28, -0.15], "ctrl2": [0.58, -0.35], "to": [0.58, -0.78]}
+      ]
+    },
+    {
+      "role": "accent",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.09,
+      "segments": [
+        {"type": "M", "to": [-0.46, 0.25]},
+        {"type": "L", "to": [0.46, 0.25]}
+      ]
+    },
+    {
+      "role": "accent",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.09,
+      "segments": [
+        {"type": "M", "to": [-0.36, 0.62]},
+        {"type": "L", "to": [0.36, 0.62]}
+      ]
+    }
+  ]
+}

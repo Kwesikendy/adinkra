@@ -1,0 +1,89 @@
+{
+  "id": "funtunfunefu",
+  "name": "Funtunfunefu-Denkyemfunefu",
+  "paths": [
+    {
+      "role": "primary",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.10,
+      "segments": [
+        {"type": "M", "to": [-0.72, -0.35]},
+        {"type": "C", "ctrl1": [-0.40, -0.35], "ctrl2": [-0.25, -0.05], "to": [0.0, 0.0]},
+        {"type": "C", "ctrl1": [0.25, 0.05], "ctrl2": [0.40, 0.35], "to": [0.72, 0.35]}
+      ]
+    },
+    {
+      "role": "primary",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.10,
+      "segments": [
+        {"type": "M", "to": [-0.72, 0.35]},
+        {"type": "C", "ctrl1": [-0.40, 0.35], "ctrl2": [-0.25, 0.05], "to": [0.0, 0.0]},
+        {"type": "C", "ctrl1": [0.25, -0.05], "ctrl2": [0.40, -0.35], "to": [0.72, -0.35]}
+      ]
+    },
+    {
+      "role": "primary",
+      "closed": true,
+      "fill": true,
+      "stroke_width": 0.04,
+      "segments": [
+        {"type": "M", "to": [0.0, -0.22]},
+        {"type": "C", "ctrl1": [0.16, -0.22], "ctrl2": [0.22, -0.10], "to": [0.22, 0.0]},
+        {"type": "C", "ctrl1": [0.22, 0.10], "ctrl2": [0.16, 0.22], "to": [0.0, 0.22]},
+        {"type": "C", "ctrl1": [-0.16, 0.22], "ctrl2": [-0.22, 0.10], "to": [-0.22, 0.0]},
+        {"type": "C", "ctrl1": [-0.22, -0.10], "ctrl2": [-0.16, -0.22], "to": [0.0, -0.22]}
+      ]
+    },
+    {
+      "role": "accent",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.08,
+      "segments": [
+        {"type": "M", "to": [-0.52, -0.32]},
+        {"type": "L", "to": [-0.52, -0.68]},
+        {"type": "M", "to": [-0.52, -0.68]},
+        {"type": "L", "to": [-0.68, -0.68]}
+      ]
+    },
+    {
+      "role": "accent",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.08,
+      "segments": [
+        {"type": "M", "to": [0.52, -0.32]},
+        {"type": "L", "to": [0.52, -0.68]},
+        {"type": "M", "to": [0.52, -0.68]},
+        {"type": "L", "to": [0.68, -0.68]}
+      ]
+    },
+    {
+      "role": "accent",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.08,
+      "segments": [
+        {"type": "M", "to": [-0.52, 0.32]},
+        {"type": "L", "to": [-0.52, 0.68]},
+        {"type": "M", "to": [-0.52, 0.68]},
+        {"type": "L", "to": [-0.68, 0.68]}
+      ]
+    },
+    {
+      "role": "accent",
+      "closed": false,
+      "fill": false,
+      "stroke_width": 0.08,
+      "segments": [
+        {"type": "M", "to": [0.52, 0.32]},
+        {"type": "L", "to": [0.52, 0.68]},
+        {"type": "M", "to": [0.52, 0.68]},
+        {"type": "L", "to": [0.68, 0.68]}
+      ]
+    }
+  ]
+}
